@@ -1,31 +1,64 @@
 .message {
+    position: relative;
+    width: 500px;
 
 }
 
 .imageAndText {
-
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-end; /*сдвинуть вниз*/
 }
 
 .imageAndText img {
-
+    position: absolute;
+    right: -70px;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%; /*дает круглую аватарку*/
 }
 
 .text {
-
+    right: 0;
+    padding: 10px;
+    border-radius: 10px 10px 0 10px;
+    background-color: #0066CC;
+    text-align: right;
 }
 
 .text:after {
+    height: 20px;
+    width: 20px;
+    background: radial-gradient(circle at right 0, #FFFFFF 20px, #0066CC 0);
 
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 21px;
 }
 
 .name {
+    font-family: 'Montserrat', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
 
+    color: #FFFFFF;
 }
 
 .messageText {
+    font-family: 'Montserrat', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #FFFFFF;
 
 }
 
 .time {
-
+    text-align: right;
 }
