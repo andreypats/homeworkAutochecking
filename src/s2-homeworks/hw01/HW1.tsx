@@ -64,5 +64,3 @@ const HW1 = () => {
 }
 
 export default HW1
-
-//25.08 public
