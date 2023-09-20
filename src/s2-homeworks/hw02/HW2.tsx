@@ -12,8 +12,8 @@ import s2 from '../../s1-main/App.module.css'
 * 7 - в файле Affairs.tsx дописать типизацию пропсов +
 * 8 - в файле Affairs.tsx дописать логику функций setAll, setHigh, setMiddle, setLow
 * 9 - в файле Affair.tsx дописать типизацию пропсов +
-* 10 - в файле Affair.tsx дописать функции deleteCallback и использовать
-* 11 - в файле Affair.tsx отобразить приходящие данные
+* 10 - в файле Affair.tsx дописать функции deleteCallback и использовать +
+* 11 - в файле Affair.tsx отобразить приходящие данные +
 * */
 
 // types
@@ -42,7 +42,6 @@ export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): A
     return affairs.filter((el)=>(el.priority === filter)) // need to fix +
 }
 export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => { // need to fix any +
-
     return affairs.filter((el)=>(el._id !== _id)) // need to fix +
 }
 
