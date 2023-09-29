@@ -21,6 +21,7 @@ export const pureOnBlur = (name: any, setError: any) => { // если имя п�
     if (name === '') {
         setError('name required')
     }
+    //?????????
 }
 
 export const pureOnEnter = (e: any, addUser: any) => { // если нажата кнопка Enter - добавить
