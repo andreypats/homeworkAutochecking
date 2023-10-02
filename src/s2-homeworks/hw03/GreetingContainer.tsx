@@ -1,36 +1,38 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
+import React, {ChangeEvent, Dispatch, useState} from 'react'
 import Greeting from './Greeting'
 import { UserType } from './HW3'
 
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any +
-    addUserCallback: (name: string) => void // need to fix any
+    addUserCallback: (name: string) => void // need to fix any +
 }
 
-export const pureAddUser = (name: any, setError: any, setName: any, addUserCallback: any) => {
-    // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
-    if (name === '') {
-        setError('name required')
+export const pureAddUser = (name: string, setError: Dispatch<string>, setName: Dispatch<string>, addUserCallback: (name: string) => void) => {
+    // если имя пустое - показать ошибку, иначе - добавить юзера и очистить input +
+    if (name.trim() === '') {
+        setError('Ошибка! Введите имя!')
     } else {
         addUserCallback(name)
         setName ('')
     }
 }
 
-export const pureOnBlur = (name: any, setError: any) => { // если имя пустое - показать ошибку
-    if (name === '') {
-        setError('name required')
+export const pureOnBlur = (name: string, setError: Dispatch<string>) => { // если имя пустое - показать ошибку +
+    if (name.trim() === '') {
+        setError('Ошибка! Введите имя!')
     }
-    //?????????
 }
 
-export const pureOnEnter = (e: any, addUser: any) => { // если нажата кнопка Enter - добавить
+export const pureOnEnter = (e: React.KeyboardEvent<HTMLInputElement>, addUser: ()=>void) => { // если нажата кнопка Enter - добавить +
+    if (e.key === 'Enter') {
+        addUser()
+    }
 }
 
 // более простой и понятный для новичков
 // function GreetingContainer(props: GreetingPropsType) {
 
-// более современный и удобный для про :)
+// более современный и удобный для про
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     users,
     addUserCallback,
@@ -57,7 +59,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
 
     const totalUsers = users.length // need to fix +
-    let lastUserName = name // need to fix +
+    let lastUserName: string;
+    lastUserName = name; // need to fix +
 
     return (
         <Greeting
